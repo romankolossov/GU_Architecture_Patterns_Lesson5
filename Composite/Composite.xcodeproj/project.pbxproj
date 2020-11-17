@@ -56,15 +56,31 @@
 		C8BBF98F25637D2300A2516D /* Composite */ = {
 			isa = PBXGroup;
 			children = (
-				C8BBF99025637D2300A2516D /* AppDelegate.swift */,
-				C8BBF99225637D2300A2516D /* SceneDelegate.swift */,
 				C8BBF99425637D2300A2516D /* ViewController.swift */,
-				C8BBF99625637D2300A2516D /* Main.storyboard */,
-				C8BBF99925637D2800A2516D /* Assets.xcassets */,
-				C8BBF99B25637D2800A2516D /* LaunchScreen.storyboard */,
+				C8BBF9A825637DCC00A2516D /* Storyboards */,
+				C8BBF9A525637D9600A2516D /* SupportingFiles */,
 				C8BBF99E25637D2800A2516D /* Info.plist */,
 			);
 			path = Composite;
+			sourceTree = "<group>";
+		};
+		C8BBF9A525637D9600A2516D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C8BBF99025637D2300A2516D /* AppDelegate.swift */,
+				C8BBF99225637D2300A2516D /* SceneDelegate.swift */,
+				C8BBF99925637D2800A2516D /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		C8BBF9A825637DCC00A2516D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C8BBF99625637D2300A2516D /* Main.storyboard */,
+				C8BBF99B25637D2800A2516D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
