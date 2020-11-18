@@ -7,22 +7,18 @@
 
 import Foundation
 
-class Folder: Taskable {
+class TaskFolder: Taskable {
     var name: String
     var tasks: [Taskable] = []
 
     var description: String {
         let taskName = tasks.compactMap { $0.description }.joined(separator: ", ")
-        return "folder \(name) contains files: \(taskName)"
+        print("HELLO TASKS", taskName)
+        return "folder \(name) contains tasks: \(taskName)"
     }
 
     init(name: String) {
         self.name = name
     }
 
-    func open() {
-        print("open \(description)")
-        print("open tasks:")
-        tasks.forEach { $0.open() }
-    }
 }

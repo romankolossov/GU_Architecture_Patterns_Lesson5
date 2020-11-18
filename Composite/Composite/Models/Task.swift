@@ -19,8 +19,4 @@ class Task: Taskable {
         self.name = name
         self.creator = creator
     }
-
-    func open() {
-        print("open \(description)")
-    }
 }
