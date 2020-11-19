@@ -12,11 +12,13 @@ import UIKit
 extension TaskViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rootTaskFolder.tasks.count
+        
+        rootTaskFolder.tasks.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 121
+        
+        return 188
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -25,7 +27,7 @@ extension TaskViewController: UITableViewDataSource {
         let task = rootTaskFolder.tasks[indexPath.row]
 
         cell.taskName.text = task.name
-        cell.taskDescription.text = task.description
+        cell.taskDescriptionTextView.text = task.description
         
         return cell
     }
@@ -34,9 +36,23 @@ extension TaskViewController: UITableViewDataSource {
 // MARK: UITableViewDelegate
 
 extension TaskViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let folder = rootTaskFolder.tasks[indexPath.row] as? TaskFolder else { return }
+        
+        folderToFulfill = folder
+        
+        performSegue(withIdentifier: "to_TaskCreationVC", sender: nil)
         
         return
+    }
+}
+
+// MARK: - TaskCreationViewControllerDelegate
+
+extension TaskViewController: TaskCreationViewControllerDelegate {
+    func addTaskFolder(_ folder: TaskFolder) {
+        rootTaskFolder.tasks = rootTaskFolder.tasks + folder.tasks
+        
+        publicTaskTableView.reloadData()
     }
 }

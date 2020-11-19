@@ -16,13 +16,19 @@ class TaskCreationViewController: UIViewController {
     @IBOutlet weak var folderTextField: UITextField!
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var creatorTextField: UITextField!
-    
     @IBOutlet weak var notificationLabel: UILabel!
     
+    // Some properties
+    var folderToFulfill: TaskFolder?
+    
+    // Delegate
     weak var taskCreationVCDelegate: TaskCreationViewControllerDelegate?
 
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        folderTextField.text = folderToFulfill?.name
         
         notificationLabel.isHidden = true
     }
@@ -53,7 +59,6 @@ class TaskCreationViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         present(taskVC, animated: true, completion: nil)
     }
-    
     
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         guard let taskVC = storyboard?.instantiateViewController(withIdentifier: "TaskViewController") as? TaskViewController else { fatalError() }

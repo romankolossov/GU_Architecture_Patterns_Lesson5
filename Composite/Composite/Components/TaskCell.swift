@@ -10,7 +10,7 @@ import UIKit
 class TaskCell: UITableViewCell {
     
     @IBOutlet weak var taskName: UILabel!
-    @IBOutlet weak var taskDescription: UILabel!
+    @IBOutlet weak var taskDescriptionTextView: UITextView!
     
 
     override func awakeFromNib() {
@@ -23,5 +23,4 @@ class TaskCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

@@ -23,7 +23,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Na4-vg-veS">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="rZY-Lu-eca">
+                                    <navigationItem title="Tasks" id="rZY-Lu-eca">
                                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="fmf-tE-cmt">
                                             <connections>
                                                 <segue destination="jf7-p0-0iq" kind="show" identifier="to_TaskCreationVC" id="iO2-Bj-Z1T"/>
@@ -46,7 +46,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="6ci-Kb-saz" id="KtY-iX-J4E"/>
+                        <outlet property="taskTableView" destination="6ci-Kb-saz" id="jTI-66-CnL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -62,49 +62,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j8g-DH-O0c">
-                                <rect key="frame" x="21" y="318" width="372" height="270"/>
+                                <rect key="frame" x="21" y="310" width="372" height="286.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVA-lg-710">
                                         <rect key="frame" x="0.0" y="0.0" width="372" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xes-df-303" userLabel="Folder">
-                                        <rect key="frame" x="0.0" y="28.5" width="372" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="372" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nl-lB-tcH">
-                                        <rect key="frame" x="0.0" y="57" width="372" height="34"/>
+                                        <rect key="frame" x="0.0" y="60.5" width="372" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQv-Mz-4Dq" userLabel="Task">
-                                        <rect key="frame" x="0.0" y="99" width="372" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="102.5" width="372" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfC-hR-4ru">
-                                        <rect key="frame" x="0.0" y="127.5" width="372" height="34"/>
+                                        <rect key="frame" x="0.0" y="134.5" width="372" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gl8-ln-XxH">
-                                        <rect key="frame" x="0.0" y="169.5" width="372" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="176.5" width="372" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iNA-mj-Hpq">
-                                        <rect key="frame" x="0.0" y="198" width="372" height="34"/>
+                                        <rect key="frame" x="0.0" y="208.5" width="372" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvs-0z-ePd">
-                                        <rect key="frame" x="0.0" y="240" width="372" height="30"/>
+                                        <rect key="frame" x="0.0" y="250.5" width="372" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
                                             <action selector="addTaskButton:" destination="jf7-p0-0iq" eventType="touchUpInside" id="fv7-aN-jaW"/>
@@ -115,7 +116,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5J-76-3g4">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="sps-bu-r1q">
+                                    <navigationItem title="Task creator" id="sps-bu-r1q">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="hAT-uH-Dkb">
                                             <connections>
                                                 <action selector="backButton:" destination="jf7-p0-0iq" id="86s-fw-xM7"/>
@@ -139,7 +140,7 @@
                     <navigationItem key="navigationItem" id="u0p-oX-Svf"/>
                     <connections>
                         <outlet property="creatorTextField" destination="iNA-mj-Hpq" id="9NY-8D-OQT"/>
-                        <outlet property="folderTextField" destination="6nl-lB-tcH" id="ccl-nS-7ib"/>
+                        <outlet property="folderTextField" destination="6nl-lB-tcH" id="C8C-4R-4pp"/>
                         <outlet property="notificationLabel" destination="qVA-lg-710" id="caD-z5-dET"/>
                         <outlet property="taskTextField" destination="cfC-hR-4ru" id="4hv-ME-4tc"/>
                     </connections>
