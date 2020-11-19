@@ -13,12 +13,11 @@ class TaskFolder: Taskable {
 
     var description: String {
         let taskName = tasks.compactMap { $0.description }.joined(separator: ", ")
-        print("HELLO TASKS", taskName)
+        
         return "folder \(name) contains tasks: \(taskName)"
     }
 
     init(name: String) {
         self.name = name
     }
-
 }
